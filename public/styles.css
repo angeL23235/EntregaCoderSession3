@@ -1,0 +1,158 @@
+:root {
+  --bg: #0e1116;
+  --card: #161b22;
+  --muted: #9aa3af;
+  --text: #e5e7eb;
+  --accent: #3b82f6;
+  --danger: #ef4444;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.4 system-ui, Segoe UI, Roboto;
+}
+a {
+  color: var(--accent);
+}
+.container {
+  max-width: 980px;
+  margin: auto;
+  padding: 24px;
+}
+.topbar {
+  background: #111827;
+  border-bottom: 1px solid #1f2937;
+}
+.row {
+  display: flex;
+  align-items: center;
+}
+.between {
+  justify-content: space-between;
+}
+.end {
+  justify-content: flex-end;
+}
+.gap {
+  gap: 12px;
+}
+.card {
+  background: var(--card);
+  padding: 16px;
+  border: 1px solid #1f2937;
+  border-radius: 12px;
+  margin-block: 16px;
+}
+h1,
+h2,
+h3 {
+  margin: 0 0 12px;
+}
+.muted {
+  color: var(--muted);
+}
+.badge {
+  background: #1f2937;
+  padding: 6px 10px;
+  border-radius: 999px;
+}
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+input,
+select,
+button {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #2a3340;
+  background: #0b0f14;
+  color: var(--text);
+}
+input:focus,
+select:focus {
+  outline: 1px solid var(--accent);
+}
+button {
+  background: var(--accent);
+  border: none;
+  cursor: pointer;
+}
+button.secondary {
+  background: #374151;
+}
+button.danger {
+  background: var(--danger);
+}
+button.mini {
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.grid-2 .full {
+  grid-column: 1 / -1;
+}
+.table-wrap {
+  overflow: auto;
+  border-radius: 8px;
+  border: 1px solid #1f2937;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+thead {
+  background: #111827;
+}
+td,
+th {
+  padding: 10px;
+  border-top: 1px solid #1f2937;
+}
+.right {
+  text-align: right;
+}
+.nowrap {
+  white-space: nowrap;
+}
+.small {
+  font-size: 12px;
+  color: var(--muted);
+}
+.error {
+  color: #fca5a5;
+}
+dialog::backdrop {
+  background: rgb(0 0 0 / 0.6);
+}
+dialog {
+  border: none;
+  border-radius: 12px;
+  padding: 0;
+}
+dialog .card {
+  margin: 0;
+  width: min(560px, 90vw);
+}
+a.btn {
+  background: var(--accent);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+a.btn:hover {
+  background: #2563eb;
+}

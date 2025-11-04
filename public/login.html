@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Login | Ecommerce FUA</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Iniciar sesión</h1>
+
+    <form id="login-form" class="card">
+      <label>Email
+        <input type="email" name="email" placeholder="usuario@correo.com" required />
+      </label>
+      <label>Contraseña
+        <input type="password" name="password" placeholder="********" required />
+      </label>
+      <button type="submit">Entrar</button>
+      <p id="login-error" class="error"></p>
+    </form>
+
+    <p class="muted"><a href="/">← Volver al inicio</a></p>
+  </main>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/login.js"></script>
+</body>
+</html>

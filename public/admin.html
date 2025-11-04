@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Panel | Ecommerce</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container row between">
+      <h1>Panel de Usuarios</h1>
+      <div class="row gap">
+        <span id="me" class="badge"></span>
+        <button id="logout-btn" class="secondary">Salir</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Crear usuario</h2>
+      <form id="create-form" class="grid-2">
+        <label>Nombre
+          <input name="first_name" required />
+        </label>
+        <label>Apellido
+          <input name="last_name" required />
+        </label>
+        <label>Email
+          <input type="email" name="email" required />
+        </label>
+        <label>Edad
+          <input type="number" name="age" min="0" />
+        </label>
+        <label>Contraseña
+          <input type="password" name="password" required />
+        </label>
+        <label>Rol
+          <select name="role">
+            <option value="user" selected>user</option>
+            <option value="admin">admin</option>
+          </select>
+        </label>
+        <div class="full">
+          <button type="submit">Crear</button>
+          <span id="create-msg" class="muted"></span>
+        </div>
+      </form>
+    </section>
+
+    <section class="card">
+      <div class="row between">
+        <h2>Listado de usuarios</h2>
+        <button id="refresh-btn" class="secondary">Actualizar</button>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Email</th>
+              <th>Edad</th>
+              <th>Rol</th>
+              <th>ID</th>
+              <th class="right">Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="users-body"></tbody>
+        </table>
+      </div>
+      <p id="list-msg" class="muted"></p>
+    </section>
+  </main>
+
+  <template id="row-tpl">
+    <tr>
+      <td class="nowrap name"></td>
+      <td class="email"></td>
+      <td class="age"></td>
+      <td class="role"></td>
+      <td class="id small"></td>
+      <td class="right">
+        <button class="mini edit">Editar</button>
+        <button class="mini danger del">Eliminar</button>
+      </td>
+    </tr>
+  </template>
+
+  <!-- Modal simple -->
+  <dialog id="edit-modal">
+    <form method="dialog" id="edit-form" class="card">
+      <h3>Editar usuario</h3>
+      <input type="hidden" name="uid" />
+      <label>Nombre
+        <input name="first_name" required />
+      </label>
+      <label>Apellido
+        <input name="last_name" required />
+      </label>
+      <label>Email
+        <input type="email" name="email" required />
+      </label>
+      <label>Edad
+        <input type="number" name="age" min="0" />
+      </label>
+      <label>Nueva contraseña (opcional)
+        <input type="password" name="password" />
+      </label>
+      <label>Rol
+        <select name="role">
+          <option value="user">user</option>
+          <option value="admin">admin</option>
+        </select>
+      </label>
+      <div class="row end gap">
+        <button type="button" id="cancel-edit" class="secondary">Cancelar</button>
+        <button type="submit">Guardar</button>
+      </div>
+      <p id="edit-msg" class="muted"></p>
+    </form>
+  </dialog>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/admin.js"></script>
+</body>
+</html>
