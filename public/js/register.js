@@ -2,7 +2,6 @@
   const form = document.getElementById('register-form');
   const msg = document.getElementById('reg-msg');
 
-  // Si ya está logueado, manda al panel
   try {
     const me = await API.current();
     if (me?.payload) {
@@ -39,16 +38,13 @@
     }
 
     try {
-      // 1) Crear usuario
       await API.createUser({ first_name, last_name, email, age, password, role });
       msg.textContent = 'Cuenta creada. Iniciando sesión...';
 
-      // 2) Auto-login
       await API.login({ email, password });
       const me = await API.current();
       location.href = me.payload?.role === 'admin' ? '/admin.html' : '/panel.html';
 
-      // 3) Ir al panel
       location.href = '/panel.html';
     } catch (e2) {
       msg.textContent = e2.message || 'No se pudo registrar';

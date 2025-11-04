@@ -1,4 +1,3 @@
-// panel.js
 (async function () {
   const greeting = document.getElementById('greeting');
   const roleEl = document.getElementById('role');
@@ -17,7 +16,6 @@
     }
 
   } catch (err) {
-    // si no está logueado, redirige a inicio
     location.href = '/';
     return;
   }

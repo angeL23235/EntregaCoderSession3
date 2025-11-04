@@ -2,7 +2,6 @@
   const form = document.getElementById('login-form');
   const err = document.getElementById('login-error');
 
-  // Si ya está logueado, envíalo al panel
   try {
     const me = await API.current();
     if (me?.payload) {

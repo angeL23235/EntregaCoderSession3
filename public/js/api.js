@@ -30,8 +30,8 @@ const API = {
     });
     if (!res.ok) throw new Error((await res.json()).message || 'Error creando');
     return res.json();
-  }
-  // /public/js/api.js
+  }, 
+  
 async listUsers() {
   const res = await fetch('/api/users', { credentials: 'include' });
   if (!res.ok) throw new Error((await res.json()).message || 'Error listando');
